@@ -24,7 +24,7 @@ public class UserController {
         }
 
         if (userBody.getName() == null) {
-            throw new BadRequestException("Invalid email");
+            throw new BadRequestException("Invalid name");
         }
 
         User user = userService.createUser(userBody);
