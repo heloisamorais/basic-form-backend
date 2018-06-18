@@ -1,5 +1,7 @@
 package br.com.portfolio.basicform.data.model;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,7 @@ public class User {
     @Column(nullable = false)
     private String name;
 
+    @Email
     @Column(nullable = false, unique = true)
     private String email;
 
