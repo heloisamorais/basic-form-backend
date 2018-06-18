@@ -19,11 +19,11 @@ public class UserController {
             method = RequestMethod.POST)
     public ResponseEntity createUser(@RequestBody User userBody){
 
-        if (userBody.getEmail() == null) {
+        if (userBody.getEmail() == null || userBody.getEmail().isEmpty()) {
             throw new BadRequestException("Invalid email");
         }
 
-        if (userBody.getName() == null) {
+        if (userBody.getName() == null|| userBody.getName().isEmpty()) {
             throw new BadRequestException("Invalid name");
         }
 
