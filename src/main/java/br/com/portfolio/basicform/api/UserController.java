@@ -23,6 +23,10 @@ public class UserController {
             throw new BadRequestException("Invalid email");
         }
 
+        if (userBody.getName() == null) {
+            throw new BadRequestException("Invalid email");
+        }
+
         User user = userService.createUser(userBody);
         return user != null ? ResponseEntity.ok().build() : ResponseEntity.badRequest().build();
     }
