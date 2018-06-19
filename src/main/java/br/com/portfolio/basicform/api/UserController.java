@@ -20,11 +20,11 @@ public class UserController {
     public ResponseEntity createUser(@RequestBody User userBody){
 
         if (userBody.getEmail() == null || userBody.getEmail().isEmpty()) {
-            throw new BadRequestException("Invalid email");
+            throw new BadRequestException("Email Inválido");
         }
 
         if (userBody.getName() == null|| userBody.getName().isEmpty()) {
-            throw new BadRequestException("Invalid name");
+            throw new BadRequestException("Nome Inválido");
         }
 
         User user = userService.createUser(userBody);
